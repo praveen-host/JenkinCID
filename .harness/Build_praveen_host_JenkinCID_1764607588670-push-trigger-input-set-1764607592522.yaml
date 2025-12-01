@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_praveen_host_JenkinCID_1764607588670-push-trigger-input-set
+  identifier: Build_praveen_host_JenkinCID_1764607588670pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Demo_Project_001
+  pipeline:
+    identifier: Build_praveen_host_JenkinCID_1764607588670
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
