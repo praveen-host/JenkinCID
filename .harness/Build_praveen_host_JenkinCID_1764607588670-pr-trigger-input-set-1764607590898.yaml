@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_praveen_host_JenkinCID_1764607588670-pr-trigger-input-set
+  identifier: Build_praveen_host_JenkinCID_1764607588670prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Demo_Project_001
+  pipeline:
+    identifier: Build_praveen_host_JenkinCID_1764607588670
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
