@@ -1,36 +1,30 @@
+
 pipeline:
-  identifier: Build_praveen_host_JenkinCID_1764607588670
-  name: Build JenkinCID
+  identifier: hello_world_pipeline
+  name: Hello World Pipeline
   orgIdentifier: default
   projectIdentifier: Demo_Project_001
-  properties:
-    ci:
-      codebase:
-        build: <+input>
-        connectorRef: account.Github
-        repoName: praveen-host/JenkinCID
   stages:
     - stage:
         identifier: build
-        name: build
+        name: Hello World Stage
+        type: CI
         spec:
-          caching:
-            enabled: true
-          cloneCodebase: true
+          cloneCodebase: false
           execution:
             steps:
               - step:
-                  identifier: echo
-                  name: echo
-                  spec:
-                    image: docker:24.0.7 
-                    command: echo hello world
-                  timeout: ""
+                  identifier: hello_step
+                  name: Hello World
                   type: Run
+                  spec:
+                    image: alpine:latest
+                    shell: sh
+                    command: |
+                      echo "Hello World from Harness CI!"
           platform:
             os: Linux
             arch: Amd64
           runtime:
             type: Docker
             spec: {}
-        type: CI
