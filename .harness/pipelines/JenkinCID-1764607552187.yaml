@@ -23,6 +23,7 @@ pipeline:
                   identifier: echo
                   name: echo
                   spec:
+                    image: docker:24.0.7 
                     command: echo hello world
                   timeout: ""
                   type: Run
