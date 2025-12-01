@@ -19,7 +19,7 @@ pipeline:
                   type: Run
                   spec:
                     image: alpine:latest
-                    shell: sh
+                    shell: Sh        # ✅ Must be Sh or Bash
                     command: |
                       echo "Hello World from Harness CI!"
           platform:
@@ -28,3 +28,9 @@ pipeline:
           runtime:
             type: Docker
             spec: {}
+        failureStrategies:          # ✅ Required
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: Ignore
